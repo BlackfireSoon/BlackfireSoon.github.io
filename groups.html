@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Groups | The Ignation Files</title>
     <style>
-        /* Shared Sleek Style */
+        /* --- SLEEK DARK THEME --- */
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #0a0a0a;
@@ -15,202 +15,163 @@
             justify-content: center;
             line-height: 1.6;
         }
-
         .container {
-            max-width: 700px;
+            max-width: 800px;
             width: 100%;
             padding: 40px 20px;
         }
+        header { text-align: center; margin-bottom: 50px; }
+        h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin: 10px 0; }
+        .back-link { color: #4a90e2; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .back-link:hover { letter-spacing: 1px; color: #fff; }
 
-        /* Navigation / Header */
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .back-link {
-            color: #4a90e2;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        .back-link:hover {
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        /* Group Card Styling */
-        .group-card {
+        /* --- GENERATED CARD STYLES --- */
+        .group-entry {
             background: #111;
             border: 1px solid #222;
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 40px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 25px;
+            margin-bottom: 30px;
+            opacity: 0; /* For fade-in animation */
+            animation: fadeIn 0.5s forwards;
         }
+        .group-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .group-header img { width: 50px; height: 50px; border-radius: 6px; object-fit: cover; background: #222; }
+        .group-header h2 { margin: 0; font-size: 1.8rem; color: #fff; }
+        
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        td { padding: 8px 0; border-bottom: 1px solid #1a1a1a; }
+        td:first-child { color: #888; text-transform: uppercase; font-size: 0.75rem; font-weight: bold; width: 160px; }
+        td:last-child { color: #4a90e2; }
 
-        .group-card:hover {
-            border-color: #444;
-            transform: translateY(-5px);
-        }
+        .description { color: #bbb; background: #0d0d0d; padding: 15px; border-radius: 6px; border-left: 3px solid #333; }
 
-        .group-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 15px;
-        }
-
-        .group-header img {
-            width: 50px;
-            height: 50px;
-            border-radius: 6px;
-            background: #222;
-        }
-
-        .group-header h2 {
-            margin: 0;
-            font-size: 1.8rem;
-            color: #ffffff;
-        }
-
-        /* Stats Metadata */
-        .stats {
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 8px;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .stats b {
-            color: #888;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.5px;
-        }
-
-        .description {
-            color: #bbb;
-            font-size: 1rem;
-        }
-
-        hr {
-            border: 0;
-            border-top: 1px solid #222;
-            margin: 40px 0;
-        }
+        @keyframes fadeIn { to { opacity: 1; } }
     </style>
 </head>
 <body>
+
     <div class="container">
         <header>
             <a href="index.html" class="back-link">← Return to Archive</a>
-            <h1>Group Directory</h1>
+            <h1>Group Database</h1>
         </header>
 
-        <div class="group-card">
-            <div class="group-header">
-                <img src="images/image4.png" alt="Les Bannis Icon">
-                <h2>Les Bannis</h2>
-            </div>
-            <div class="stats">
-                <b>Founder(s)</b> <span>Caligula</span>
-                <b>Established</b> <span>September 2024</span>
-                <b>Type</b> <span>Griefing & Server Crashing</span>
-                <b>DC Members</b> <span>~70</span>
-                <b>RG Members</b> <span>190</span>
-            </div>
-            <p class="description">Les Bannis was a griefing group inspired by La Rivia.</p>
-        </div>
-
-        <div class="group-card">
-            <div class="group-header">
-                <img src="images/image2.png" alt="Ignation Icon">
-                <h2>Ignation</h2>
-            </div>
-            <div class="stats">
-                <b>Founder(s)</b> <span>Blackfire</span>
-                <b>Established</b> <span>January 2025</span>
-                <b>Type</b> <span>Exploiting & System Exploiting</span>
-                <b>DC Members</b> <span>270</span>
-                <b>RG Members</b> <span>53</span>
-            </div>
-            <div class="description">
-                <p>Ignation accomplished many things such as figuring out how to send chat messages globally, and finding many RemoteEvent backdoors in modkits such as Progears, Pets, and Protil Economy.</p>
-                <p>In late January 2026, Ignation managed to get a backdoor into the game Build Island and gave their members HD Admin ranks in-game. Along with that, they also wiped a bunch of saves and banned multiple players.</p>
-            </div>
-        </div>
-
-        <div class="group-card">
-            <div class="group-header">
-                <img src="images/image5.png" alt="ORCID Icon">
-                <h2>ORCID</h2>
-            </div>
-            <div class="stats">
-                <b>Founder(s)</b> <span>KizaKaser</span>
-                <b>Established</b> <span>February 2025</span>
-                <b>Type</b> <span>Griefing, Server Crashing</span>
-                <b>DC Members</b> <span>38</span>
-                <b>RG Members</b> <span>368</span>
-            </div>
-            <p class="description">ORCID is one of the most notorious Build Island griefing groups. ORCID had many griefing saves on the Build Island popular page such as Server Crashers, Memory Eaters, and Teleport Traps.</p>
-        </div>
-
-        <div class="group-card">
-            <div class="group-header">
-                <img src="images/image1.png" alt="Noctis Union Icon">
-                <h2>Noctis Union</h2>
-            </div>
-            <div class="stats">
-                <b>Founder(s)</b> <span>Blackfire</span>
-                <b>Established</b> <span>June 2025</span>
-                <b>Type</b> <span>Hosting, Threatening</span>
-                <b>DC Members</b> <span>65</span>
-                <b>RG Members</b> <span>63</span>
-            </div>
-            <p class="description">After Ignation disassembled in early June, Blackfire made a new griefing group called Noctis. Noctis started by hosting recruitment games where they stated their plans to destroy Build Island, earning them ~20 members in a week. They eventually got a "McDonalds" save onto the popular page which contained a backdoor, allowing members to gain rank 5 in servers and generate Robux via gamepass prompts.</p>
-        </div>
-
-        <div class="group-card">
-            <div class="group-header">
-                <img src="images/image3.png" alt="DICRO Icon">
-                <h2>DICRO</h2>
-            </div>
-            <div class="stats">
-                <b>Founder(s)</b> <span>Blackfire</span>
-                <b>Established</b> <span>August 2025</span>
-                <b>Type</b> <span>NSFW</span>
-                <b>Members</b> <span>4</span>
-            </div>
-            <p class="description">A private group formed by Blackfire and three loyal members after Noctis. DICRO focused on private NSFW server-hosting. Their activities eventually led to decals being permanently disabled for certain games, though they continued to use texture and mesh blocks as a counter-measure.</p>
-        </div>
-
-        <div class="group-card">
-            <div class="group-header">
-                <img src="images/image6.png" alt="ARCID Icon">
-                <h2>ARCID</h2>
-            </div>
-            <div class="stats">
-                <b>Founder(s)</b> <span>Unknown</span>
-                <b>Established</b> <span>August 2025</span>
-                <b>Type</b> <span>NSFW</span>
-                <b>Members</b> <span>Unknown</span>
-            </div>
-            <p class="description">The Arcidmen hosted games featuring bypassed 18+ decals.</p>
-        </div>
-
+        <div id="content-area"></div>
     </div>
+
+    <script>
+        // ==========================================
+        //  CONFIGURATION ZONE (EDIT THIS)
+        // ==========================================
+        
+       const groups = {
+    "Les Bannis": {
+        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(4).png?raw=true",
+        stats: {
+            "Founder(s)": "Caligula",
+            "Established": "September 2024",
+            "Type": "Griefing & Server Crashing",
+            "Discord Members": "~70",
+            "Roblox Members": "190"
+        },
+        desc: "Les Bannis was a griefing group inspired by La Rivia."
+    },
+
+    "Ignation": {
+        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(2).jpg?raw=true",
+        stats: {
+            "Founder(s)": "Blackfire",
+            "Established": "January 2025",
+            "Type": "Exploiting & System Exploiting",
+            "Discord Members": "270",
+            "Roblox Members": "53"
+        },
+        desc: "Ignation specialized in RemoteEvent backdoors in modkits like Progears and Protil Economy. In late January 2026, they successfully backdoored Build Island, granting members admin ranks and wiping saves."
+    },
+
+    "ORCID": {
+        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(5).png?raw=true",
+        stats: {
+            "Founder(s)": "KizaKaser",
+            "Established": "February 2025",
+            "Type": "Griefing, Server Crashing",
+            "Discord Members": "38",
+            "Roblox Members": "368"
+        },
+        desc: "One of the most notorious Build Island griefing groups. They were known for placing malicious saves on the popular page, including Server Crashers and Teleport Traps."
+    },
+
+    "Noctis Union": {
+        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(1).png?raw=true",
+        stats: {
+            "Founder(s)": "Blackfire",
+            "Established": "June 2025",
+            "Type": "Hosting, Threatening",
+            "Discord Members": "65",
+            "Roblox Members": "63"
+        },
+        desc: "Formed after Ignation disassembled. Noctis utilized recruitment games and a backdoored 'McDonalds' save on the Build Island popular page to gain revenue through forced gamepass prompts."
+    },
+
+    "DICRO": {
+        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(3).png?raw=true",
+        stats: {
+            "Founder(s)": "Blackfire",
+            "Established": "August 2025",
+            "Type": "NSFW / Private Griefing",
+            "Members": "4"
+        },
+        desc: "A private group consisting of loyal Noctis members. They focused on hosting controversial content, eventually leading to permanent changes in how decal blocks function in certain games."
+    },
+
+    "ARCID": {
+        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(6).png?raw=true",
+        stats: {
+            "Founder(s)": "Unknown",
+            "Established": "August 2025",
+            "Type": "NSFW",
+            "Members": "Unknown"
+        },
+        desc: "The Arcidmen were known for hosting games featuring bypassed 18+ decals."
+    }
+};
+        // ==========================================
+        //  SYSTEM LOGIC (DO NOT TOUCH)
+        // ==========================================
+
+        const container = document.getElementById('content-area');
+
+        // Loop through the 'groups' object
+        for (const [name, data] of Object.entries(groups)) {
+            
+            // 1. Create the Card
+            const card = document.createElement('div');
+            card.className = 'group-entry';
+
+            // 2. Build the Header (Image + Title)
+            const header = document.createElement('div');
+            header.className = 'group-header';
+            header.innerHTML = `<img src="${data.icon}" alt="${name}"> <h2>${name}</h2>`;
+            card.appendChild(header);
+
+            // 3. Build the Table automatically based on your stats
+            const table = document.createElement('table');
+            for (const [key, value] of Object.entries(data.stats)) {
+                const row = `<tr><td>${key}</td><td>${value}</td></tr>`;
+                table.innerHTML += row;
+            }
+            card.appendChild(table);
+
+            // 4. Add Description
+            const desc = document.createElement('div');
+            desc.className = 'description';
+            desc.textContent = data.desc;
+            card.appendChild(desc);
+
+            // 5. Inject into page
+            container.appendChild(card);
+        }
+    </script>
 </body>
 </html>
