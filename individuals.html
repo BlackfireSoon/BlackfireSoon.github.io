@@ -266,7 +266,7 @@ card.innerHTML = `
 if (data.userId) {
     card.addEventListener("click", () => {
         window.open(
-            "https://www.roblox.com/users/" + data.userId + "/profile",
+            "https://www.roblox.com/users/" + (data.userId || 0) + "/profile",
             "_blank"
         );
     });
