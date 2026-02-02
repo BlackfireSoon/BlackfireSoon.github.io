@@ -45,6 +45,17 @@
             color: #fff;
         }
 
+        .individual-entry {
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.individual-entry:hover {
+    transform: translateY(-3px);
+    border-color: #4a90e2;
+}
+
+
         .search-bar {
             width: 100%;
             max-width: 420px;
@@ -145,25 +156,28 @@
 <script>
 const individuals = {
     "Blackfire": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/image2.png?raw=true",
+        userId: 1171701233,
+        icon: "images/image2",
         stats: {
-            "Identities": "JegErRex, BIackfireDeveIoper, BlackfireSoon, FlipTheRepublics, Colicuss",
+            "Identities": "JegErRex, BlackfireSoon, Colicuss",
             "Roles": "Programmer, Exploiter, Griefer"
         },
         desc: "Founder of Ignation, Noctis, and DICRO."
     },
 
     "KizaKaser": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/image4.png?raw=true",
+        userId: 3226112219,
+        icon: "images/image4",
         stats: {
-            "Identities": "KizaKaser, ORCIDLEADER, IFeelBlue",
+            "Identities": "KizaKaser, ORCIDLEADER",
             "Roles": "Griefer"
         },
         desc: "Founder of ORCID."
     },
 
     "Cromerrr": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/image3.png?raw=true",
+        userId: 7597556471,
+        icon: "images/image3",
         stats: {
             "Identities": "CretorEpics12",
             "Roles": "Wirer"
@@ -172,16 +186,18 @@ const individuals = {
     },
 
     "TheUserOfTheName": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/image1.png?raw=true",
+        userId: 421267083,
+        icon: "images/image1",
         stats: {
             "Identities": "blockdown64",
             "Roles": "Programmer"
         },
-        desc: "Former junior developer of Build Island."
+        desc: "Former Jr developer of Build Island. Owner of Bild Iland."
     },
 
     "Bereza": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/image5.png?raw=true",
+        userId: 5000861,
+        icon: "images/image5",
         stats: {
             "Identities": "berezaa",
             "Roles": "Programmer"
@@ -190,29 +206,32 @@ const individuals = {
     },
 
     "Aphrodisial": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/image6.png?raw=true",
+        userId: 146874200,
+        icon: "images/image6",
         stats: {
-            "Identities": "Unknown",
+            "Identities": "Aphrodisial",
             "Roles": "Programmer"
         },
         desc: "Added Paint tool and Player Variables."
     },
 
     "Plexitium": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/image7.png?raw=true",
+        userId: 1913848342,
+        icon: "images/image7",
         stats: {
-            "Identities": "Unknown",
+            "Identities": "Plexitium",
             "Roles": "Programmer"
         },
         desc: "Leaked Build Island rbxl."
     },
 
     "MrForest": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/65fedb13a80da35b31498f749a9a31a6.png?raw=true",
+        userId: 10446248928,
+        icon: "discordpink.png",
         stats: {
-            "Roles": "Programmer, Griefer"
+            "Roles": "Programmer, Exploiter"
         },
-        desc: "Former DICRO member."
+        desc: "Ignation HR member and Python scripter."
     }
 };
 
@@ -228,23 +247,33 @@ function render(filter = "") {
             !identities.includes(filter)
         ) continue;
 
-        const card = document.createElement("div");
-        card.className = "individual-entry";
+       const card = document.createElement("div");
+card.className = "individual-entry";
 
-        card.innerHTML = `
-            <div class="individual-header">
-                <img src="${data.icon}">
-                <h2>${name}</h2>
-            </div>
-            <table>
-                ${Object.entries(data.stats).map(
-                    ([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`
-                ).join("")}
-            </table>
-            <div class="description">${data.desc}</div>
-        `;
+card.innerHTML = `
+    <div class="individual-header">
+        <img src="${data.icon}">
+        <h2>${name}</h2>
+    </div>
+    <table>
+        ${Object.entries(data.stats).map(
+            ([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`
+        ).join("")}
+    </table>
+    <div class="description">${data.desc}</div>
+`;
 
-        container.appendChild(card);
+if (data.userId) {
+    card.addEventListener("click", () => {
+        window.open(
+            "https://www.roblox.com/users/" + data.userId + "/profile",
+            "_blank"
+        );
+    });
+}
+
+container.appendChild(card);
+
     }
 }
 
