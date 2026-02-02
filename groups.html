@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Groups | The Ignation Files</title>
     <style>
-        /* --- SLEEK DARK THEME --- */
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #0a0a0a;
@@ -21,53 +20,94 @@
             padding: 40px 20px;
         }
         header { text-align: center; margin-bottom: 50px; }
-        h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin: 10px 0; }
-        .back-link { color: #4a90e2; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        .back-link:hover { letter-spacing: 1px; color: #fff; }
-
-        /* --- GENERATED CARD STYLES --- */
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            margin: 10px 0;
+        }
+        .back-link {
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-link:hover {
+            letter-spacing: 1px;
+            color: #fff;
+        }
         .group-entry {
             background: #111;
             border: 1px solid #222;
             border-radius: 12px;
             padding: 25px;
             margin-bottom: 30px;
-            opacity: 0; /* For fade-in animation */
+            opacity: 0;
             animation: fadeIn 0.5s forwards;
         }
-        .group-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-        .group-header img { width: 50px; height: 50px; border-radius: 6px; object-fit: cover; background: #222; }
-        .group-header h2 { margin: 0; font-size: 1.8rem; color: #fff; }
-        
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
-        td { padding: 8px 0; border-bottom: 1px solid #1a1a1a; }
-        td:first-child { color: #888; text-transform: uppercase; font-size: 0.75rem; font-weight: bold; width: 160px; }
+        .group-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .group-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 6px;
+            object-fit: cover;
+            background: #222;
+        }
+        .group-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        td {
+            padding: 8px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        td:first-child {
+            color: #888;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: bold;
+            width: 160px;
+        }
         td:last-child { color: #4a90e2; }
-
-        .description { color: #bbb; background: #0d0d0d; padding: 15px; border-radius: 6px; border-left: 3px solid #333; }
-
-        @keyframes fadeIn { to { opacity: 1; } }
+        .description {
+            color: #bbb;
+            background: #0d0d0d;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #333;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
+<div class="container">
+    <header>
+        <a href="blackfiresoon.github.io" class="back-link">← Return to Archive</a>
+        <h1>Group Database</h1>
+    </header>
 
-    <div class="container">
-        <header>
-            <a href="blackfiresoon.github.io" class="back-link">← Return to Archive</a>
-            <h1>Group Database</h1>
-        </header>
+    <div id="content-area"></div>
+</div>
 
-        <div id="content-area"></div>
-    </div>
-
-    <script>
-        // ==========================================
-        //  CONFIGURATION ZONE (EDIT THIS)
-        // ==========================================
-        
-       const groups = {
+<script>
+const groups = {
     "Les Bannis": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(4).png?raw=true",
+        icon: "images/content%20(4).png",
         stats: {
             "Founder(s)": "Caligula",
             "Established": "September 2024",
@@ -77,9 +117,8 @@
         },
         desc: "Les Bannis was a griefing group inspired by La Rivia."
     },
-
     "Ignation": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(2).jpg?raw=true",
+        icon: "images/content%20(2).jpg",
         stats: {
             "Founder(s)": "Blackfire",
             "Established": "January 2025",
@@ -89,9 +128,8 @@
         },
         desc: "Ignation was the first ever Build Island exploiting group. In January 2026, Ignation managed to get a backdoor into Bild Iland which let them wipe saves of certain users and ban a lot of players."
     },
-
     "ORCID": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(5).png?raw=true",
+        icon: "images/content%20(5).png",
         stats: {
             "Founder(s)": "KizaKaser",
             "Established": "February 2025",
@@ -101,9 +139,8 @@
         },
         desc: "One of the most notorious Build Island griefing groups. They were known for placing malicious saves on the popular page, including Server Crashers and Teleport Traps."
     },
-
     "Noctis Union": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(1).png?raw=true",
+        icon: "images/content%20(1).png",
         stats: {
             "Founder(s)": "Blackfire",
             "Established": "June 2025",
@@ -113,9 +150,8 @@
         },
         desc: "A temporary group which Blackfire would create after Ignation dissasembled."
     },
-
     "DICRO": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(3).png?raw=true",
+        icon: "images/content%20(3).png",
         stats: {
             "Founder(s)": "Blackfire",
             "Established": "August 2025",
@@ -124,9 +160,8 @@
         },
         desc: "DICRO was a private NSFW hosting group consisting of 4 loyal Noctis members."
     },
-
     "ARCID": {
-        icon: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(6).png?raw=true",
+        icon: "images/content%20(6).png",
         stats: {
             "Founder(s)": "?",
             "Established": "August 2025",
@@ -136,42 +171,31 @@
         desc: "The Arcidmen were known for hosting games featuring bypassed 18+ decals."
     }
 };
-        // ==========================================
-        //  SYSTEM LOGIC (DO NOT TOUCH)
-        // ==========================================
 
-        const container = document.getElementById('content-area');
+const container = document.getElementById("content-area");
 
-        // Loop through the 'groups' object
-        for (const [name, data] of Object.entries(groups)) {
-            
-            // 1. Create the Card
-            const card = document.createElement('div');
-            card.className = 'group-entry';
+for (const [name, data] of Object.entries(groups)) {
+    const card = document.createElement("div");
+    card.className = "group-entry";
 
-            // 2. Build the Header (Image + Title)
-            const header = document.createElement('div');
-            header.className = 'group-header';
-            header.innerHTML = `<img src="${data.icon}" alt="${name}"> <h2>${name}</h2>`;
-            card.appendChild(header);
+    const header = document.createElement("div");
+    header.className = "group-header";
+    header.innerHTML = `<img src="${data.icon}" alt="${name}"><h2>${name}</h2>`;
+    card.appendChild(header);
 
-            // 3. Build the Table automatically based on your stats
-            const table = document.createElement('table');
-            for (const [key, value] of Object.entries(data.stats)) {
-                const row = `<tr><td>${key}</td><td>${value}</td></tr>`;
-                table.innerHTML += row;
-            }
-            card.appendChild(table);
+    const table = document.createElement("table");
+    for (const [key, value] of Object.entries(data.stats)) {
+        table.innerHTML += `<tr><td>${key}</td><td>${value}</td></tr>`;
+    }
+    card.appendChild(table);
 
-            // 4. Add Description
-            const desc = document.createElement('div');
-            desc.className = 'description';
-            desc.textContent = data.desc;
-            card.appendChild(desc);
+    const desc = document.createElement("div");
+    desc.className = "description";
+    desc.textContent = data.desc;
+    card.appendChild(desc);
 
-            // 5. Inject into page
-            container.appendChild(card);
-        }
-    </script>
+    container.appendChild(card);
+}
+</script>
 </body>
 </html>
