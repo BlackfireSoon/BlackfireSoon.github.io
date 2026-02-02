@@ -126,12 +126,58 @@
             position: relative;
         }
 
-        .icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            display: block;
-            color: var(--accent);
-        }
+        .announcement-card {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 15px;
+    background: linear-gradient(
+        135deg,
+        rgba(74, 144, 226, 0.15),
+        rgba(20, 20, 20, 0.85)
+    );
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+}
+
+.announcement-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.25);
+}
+
+.announcement-text {
+    text-align: left;
+}
+
+.announcement-text h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.announcement-text p {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+
+.icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 0 6px rgba(74, 144, 226, 0.4));
+}
+
 
         footer {
             margin-top: 60px;
@@ -151,25 +197,35 @@
             <p class="subtitle">Contributors: Blackfire, MrForest</p>
         </header>
 
-        <nav class="nav-grid">
-            <a href="groups.html" class="nav-card">
-                <span class="icon">📁</span>
-                <h2>Groups</h2>
-                <p>Detailed information about various Build Island groups such as ORCID, Les Bannis, etc.</p>
-            </a>
+       <nav class="nav-grid">
+    <a href="groups.html" class="nav-card">
+        <img src="icons/groups.png" class="icon" alt="Groups">
+        <h2>Groups</h2>
+        <p>Detailed information about various Build Island groups such as ORCID, Les Bannis, etc.</p>
+    </a>
 
-            <a href="lore.html" class="nav-card">
-                <span class="icon">📜</span>
-                <h2>History</h2>
-                <p>Timeline of events from the birth of Ignation in early 2025 to today.</p>
-            </a>
+    <a href="lore.html" class="nav-card">
+        <img src="icons/history.png" class="icon" alt="History">
+        <h2>History</h2>
+        <p>Timeline of events from the birth of Ignation in early 2025 to today.</p>
+    </a>
 
-            <a href="individuals.html" class="nav-card">
-                <span class="icon">👤</span>
-                <h2>Individuals</h2>
-                <p>Information about certain members of the Build Island community.</p>
-            </a>
-        </nav>
+    <a href="individuals.html" class="nav-card">
+        <img src="icons/individuals.png" class="icon" alt="Individuals">
+        <h2>Individuals</h2>
+        <p>Information about certain members of the Build Island community.</p>
+    </a>
+</nav>
+
+        <a href="announcements.html" class="announcement-card">
+    <img src="icons/announcement.png" class="icon" alt="Announcement">
+    <div class="announcement-text">
+        <h3>Latest Announcement</h3>
+        <p>Ignation archive updated with new groups and revised historical entries.</p>
+    </div>
+</a>
+
+
     </div>
 
 </body>
