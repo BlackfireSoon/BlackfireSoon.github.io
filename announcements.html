@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | The Ignation Files</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            margin: 10px 0;
+        }
+        .back-link {
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-link:hover {
+            color: #fff;
+        }
+
+        .announcement {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .announcement-title {
+            font-size: 1.8rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        .announcement-date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-left: 8px;
+        }
+
+        .announcement-meta {
+            margin-top: 5px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .announcement-text {
+            margin-top: 15px;
+            color: #bbb;
+            background: #0d0d0d;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #333;
+        }
+
+        .announcement img {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <a href="blackfiresoon.github.io" class="back-link">← Return to Archive</a>
+        <h1>Announcements</h1>
+    </header>
+
+    <div id="content-area"></div>
+</div>
+
+<script>
+const announcements = [
+    {
+        title: "Ignation Archive Update",
+        date: "Feb 2, 2026",
+        author: "Blackfire",
+        text: "The archive has been updated with new internal records and corrected timelines. Older entries may have minor revisions.",
+        image: "https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/images/content%20(2).jpg?raw=true"
+    },
+    {
+        title: "Database Maintenance",
+        date: "Jan 28, 2026",
+        author: "Blackfire",
+        text: "Temporary downtime may occur during backend cleanup. No data loss is expected.",
+        image: null
+    }
+];
+
+const container = document.getElementById("content-area");
+
+announcements.forEach(a => {
+    const card = document.createElement("div");
+    card.className = "announcement";
+
+    card.innerHTML = `
+        <h2 class="announcement-title">
+            ${a.title}
+            <span class="announcement-date">${a.date}</span>
+        </h2>
+        <div class="announcement-meta">From: ${a.author}</div>
+        <div class="announcement-text">${a.text}</div>
+        ${a.image ? `<img src="${a.image}" alt="Announcement image">` : ""}
+    `;
+
+    container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
