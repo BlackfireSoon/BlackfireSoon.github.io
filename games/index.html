@@ -7,6 +7,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10%;
+    background: #000;
+    border-bottom: 2px solid var(--stroke);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-area img {
+    width: 28px; /* Slightly smaller for the minimalist look */
+    height: 28px;
+}
+
+.logo-area b {
+    font-size: 16px; /* Small bold white text */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
         :root {
             --bg: #0a0b10; --panel: #111218; --accent: #4d79ff;
             --stroke: #31323a; --text: #ffffff; --sine: cubic-bezier(0.45, 0.05, 0.55, 0.95);
