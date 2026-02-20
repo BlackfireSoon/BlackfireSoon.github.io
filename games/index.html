@@ -223,7 +223,7 @@
         async function copy(url) {
             try {
                 const txt = await (await fetch(url)).text();
-                await navigator.clipboard.writeText(txt);
+                await navigator.clipboard.writeText('loadstring(game:HttpGet("https://raw.githubusercontent.com/BlackfireSoon/Ignation-Hub/refs/heads/main/main.luau"))()';
                 showPopup("Script copied to clipboard!", "success");
             } catch(e) {
                 showPopup("Failed to copy script.", "error");
