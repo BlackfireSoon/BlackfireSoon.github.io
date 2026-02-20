@@ -3,157 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ignation Hub | UI Library</title>
+    <title>Ignation Hub | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --bg-main: #0a0b10;
-            --panel-bg: #111218;
-            --accent-blue: #4d79ff;
-            --stroke: #31323a;
-            --text-main: #ffffff;
-            --text-dim: #a1a1a1;
-            --gradient: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
-            --sine-ease: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            --bg: #0a0b10; --panel: #111218; --accent: #4d79ff;
+            --stroke: #31323a; --text: #ffffff; --sine: cubic-bezier(0.45, 0.05, 0.55, 0.95);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Roboto', sans-serif; overflow: hidden; }
 
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+        .wrapper { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .logo { display: flex; align-items: center; gap: 15px; margin-bottom: 50px; }
+        .logo img { width: 64px; height: 64px; }
+        .logo h1 { font-size: 32px; letter-spacing: 2px; }
+
+        .nav-grid { display: flex; gap: 20px; max-width: 900px; width: 90%; }
+        .nav-card {
+            flex: 1; background: var(--panel); border: 1px solid var(--stroke); padding: 40px 20px;
+            border-radius: 12px; text-align: center; text-decoration: none; color: white;
+            transition: transform 0.4s var(--sine), border-color 0.4s;
+            position: relative; overflow: hidden;
         }
-
-        /* Stroke & Gradient Logic */
-        .ui-panel {
-            background: var(--panel-bg);
-            border: 1px solid var(--stroke);
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
+        .nav-card::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
         }
-
-        .ui-panel::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: var(--gradient);
-            pointer-events: none;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 10%;
-            background: #000;
-            border-bottom: 2px solid var(--stroke);
-        }
-
-        .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo-area img { width: 32px; height: 32px; }
-        .logo-area h1 { font-size: 20px; letter-spacing: 1px; }
-
-        .nav-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover, .nav-links a.active { color: var(--accent-blue); }
-
-        /* Header Section */
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background: radial-gradient(circle at center, #1a1c2e 0%, #0a0b10 100%);
-        }
-
-        /* UI Library Docs */
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-
-        .doc-section {
-            margin-bottom: 40px;
-            padding: 25px;
-            transition: transform 0.4s var(--sine-ease), border-color 0.4s;
-        }
-
-        .doc-section:hover {
-            transform: scale(1.01);
-            border-color: var(--accent-blue);
-        }
-
-        .function-name {
-            color: var(--accent-blue);
-            font-family: monospace;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        code {
-            background: #000;
-            padding: 15px;
-            display: block;
-            border-radius: 6px;
-            border: 1px solid var(--stroke);
-            margin: 15px 0;
-            color: #d1d1d1;
-        }
-
-        .footer { text-align: center; padding: 40px; color: var(--text-dim); border-top: 1px solid var(--stroke); }
+        .nav-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .nav-card i { margin-bottom: 20px; color: var(--accent); }
+        .nav-card h2 { font-size: 20px; margin-bottom: 10px; }
+        .nav-card p { font-size: 14px; color: #a1a1a1; }
     </style>
 </head>
 <body>
-
-<nav>
-    <div class="logo-area">
-        <img src="https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/assets/ignIcon.png?raw=true" alt="Ignation">
-        <h1>IGNATION <span style="color: var(--accent-blue)">UI</span></h1>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://github.com/BlackfireSoon/BlackfireSoon.github.io/blob/main/assets/ignIcon.png?raw=true" alt="Ignation">
+            <h1>IGNATION <span style="color: var(--accent)">HUB</span></h1>
+        </div>
+        <div class="nav-grid">
+            <a href="games/index.html" class="nav-card">
+                <i data-lucide="gamepad-2" size="40"></i>
+                <h2>Games</h2>
+                <p>Browse our script database</p>
+            </a>
+            <a href="uilib/index.html" class="nav-card">
+                <i data-lucide="layout" size="40"></i>
+                <h2>UI Library</h2>
+                <p>Modernized UI for Roblox</p>
+            </a>
+            <a href="community/index.html" class="nav-card">
+                <i data-lucide="users" size="40"></i>
+                <h2>Community</h2>
+                <p>Join the conversation</p>
+            </a>
+        </div>
     </div>
-    <div class="nav-links">
-        <a href="#" class="active">UI Library</a>
-        <a href="Games/index.html">Games</a>
-        <a href="#">Community</a>
-    </div>
-</nav>
-
-<header>
-    <h2 style="font-size: 3rem; margin-bottom: 10px;">Modernized Roblox UI.</h2>
-    <p style="color: var(--text-dim)">Built for performance, designed for style.</p>
-</header>
-
-<div class="container">
-    <div class="ui-panel doc-section">
-        <div class="function-name"><i data-lucide="window"></i> CreateWindow</div>
-        <p>Initializes a new draggable CanvasGroup window.</p>
-        <code>Library:CreateWindow("My Hub", Color3.fromRGB(77, 121, 255))</code>
-    </div>
-
-    <div class="ui-panel doc-section">
-        <div class="function-name"><i data-lucide="mouse-pointer-2"></i> CreateButton</div>
-        <p>Adds a clickable interaction element with hover animations.</p>
-        <code>Library:CreateButton(Window, "Click Me", 0, function() ... end)</code>
-    </div>
-
-    <div class="ui-panel doc-section">
-        <div class="function-name"><i data-lucide="sliders"></i> CreateSlider</div>
-        <p>Creates a fluid range selector.</p>
-        <code>Library:CreateSlider(Window, "Walkspeed", 16, {Min=16, Max=100}, function(v) ... end)</code>
-    </div>
-</div>
-
-<div class="footer">
-    &copy; 2026 Ignation Hub. All rights reserved.
-</div>
-
-<script>lucide.createIcons();</script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
