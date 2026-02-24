@@ -2,24 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ignation Hub | Plus</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="../style.css">
     <style>
-        .container { margin-top: 120px; text-align: center; padding: 0 20px; }
-        .plus-header { margin-bottom: 40px; }
-        h1 { font-size: 48px; margin-bottom: 10px; color: #ffd700; }
-        p { color: #a1a1a1; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+        :root {
+            --gold: #ffd700;
+            --gold-glow: rgba(255, 215, 0, 0.3);
+            --dark-bg: #0a0a0a;
+            --panel-glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            background-image: radial-gradient(circle at top, #1a1a00 0%, #0a0a0a 100%);
+            overflow-x: hidden;
+        }
+
+        .container { margin-top: 100px; text-align: center; padding: 0 20px 80px; }
         
-        .perks-grid { display: flex; gap: 20px; max-width: 800px; margin: 0 auto 40px; flex-wrap: wrap; justify-content: center; }
-        .perk-card { background: var(--panel); border: 1px solid var(--stroke); padding: 30px; border-radius: 12px; flex: 1 1 200px; text-align: left; }
-        .perk-card i { color: #ffd700; margin-bottom: 15px; }
-        .perk-card h3 { margin-bottom: 10px; font-size: 18px; }
-        .perk-card p { margin: 0; font-size: 14px; }
-        
-        .btn-plus { background: #ffd700; color: #000; }
-        .btn-plus:hover { box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2); transform: translateY(-2px); }
+        /* Header Upgrade */
+        .plus-header { margin-bottom: 60px; animation: fadeIn 1s ease-out; }
+        h1 { 
+            font-family: 'Poppins', sans-serif;
+            font-size: 56px; 
+            font-weight: 800;
+            margin-bottom: 10px; 
+            color: var(--gold);
+            text-shadow: 0 0 20px var(--gold-glow);
+            letter-spacing: -1px;
+        }
+        .subtitle { color: #a1a1a1; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; font-size: 1.1rem; }
+
+        /* Perks Section */
+        .perks-grid { 
+            display: flex; 
+            gap: 20px; 
+            max-width: 900px; 
+            margin: 0 auto 60px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
+        .perk-card { 
+            background: var(--panel-glass); 
+            border: 1px solid rgba(255, 215, 0, 0.1); 
+            padding: 25px; 
+            border-radius: 16px; 
+            flex: 1 1 250px; 
+            text-align: left;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+        .perk-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+        .perk-card i { color: var(--gold); margin-bottom: 15px; display: block; }
+        .perk-card h3 { margin-bottom: 10px; font-size: 18px; color: #fff; }
+        .perk-card p { margin: 0; font-size: 14px; color: #888; }
+
+        /* Pricing Section */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--stroke);
+            border-radius: 20px;
+            padding: 40px 30px;
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--gold);
+            background: rgba(255, 215, 0, 0.03);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .price-val { font-size: 42px; font-weight: 800; color: #fff; margin: 15px 0; }
+        .price-sub { color: #666; font-size: 14px; margin-bottom: 30px; }
+        .savings { color: #4CAF50; font-weight: bold; font-size: 14px; }
+
+        .btn-buy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .btn-gold { background: var(--gold); color: #000; }
+        .btn-gold:hover { background: #fff; box-shadow: 0 0 20px var(--gold-glow); }
+        .btn-outline { border: 1px solid #444; color: #fff; }
+        .btn-outline:hover { background: #222; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .price-card.featured { transform: scale(1); }
+            .pricing-container { gap: 40px; }
+        }
     </style>
 </head>
 <body>
@@ -35,35 +148,57 @@
             <a href="../plus/" class="active" style="color: #ffd700;">Plus</a>
         </div>
     </nav>
+
     <div class="container">
         <div class="plus-header">
             <i data-lucide="crown" size="64" style="color: #ffd700; margin-bottom: 15px;"></i>
-            <h1>Ignation Plus</h1>
-            <p>Elevate your experience. Get exclusive perks, early access to new scripts, and a special role in our community.</p>
+            <h1>IGNATION PLUS</h1>
+            <p class="subtitle">Join the elite tier of Ignation. Unlock specialized tools, early features, and dominate the leaderboard.</p>
         </div>
 
         <div class="perks-grid">
             <div class="perk-card">
                 <i data-lucide="shield-check" size="32"></i>
                 <h3>Special Discord Role</h3>
-                <p>Stand out with a unique color and badge in the official Discord server.</p>
+                <p>Stand out with a unique color and exclusive badge in the official server.</p>
             </div>
             <div class="perk-card">
                 <i data-lucide="zap" size="32"></i>
                 <h3>Early Access</h3>
-                <p>Test new games and features before they go public for everyone else.</p>
+                <p>Test new games and premium features 2 weeks before public release.</p>
             </div>
             <div class="perk-card">
                 <i data-lucide="gift" size="32"></i>
-                <h3>Plus Giveaways</h3>
-                <p>Gain entry into exclusive, high-value giveaways reserved only for Plus members.</p>
+                <h3>Exclusive Giveaways</h3>
+                <p>Monthly high-value drops reserved specifically for Plus members.</p>
             </div>
         </div>
 
-        <a href="#" class="btn btn-plus">
-            <i data-lucide="shopping-cart"></i> Get Ignation Plus
-        </a>
+        <div class="pricing-container">
+            <div class="price-card featured">
+                <div class="badge">Best Value</div>
+                <h3>Plus Lifetime</h3>
+                <div class="price-val">$1.59</div>
+                <p class="price-sub">One-time payment</p>
+                <p class="savings">Save ~45% compared to Robux</p>
+                <a href="#" class="btn-buy btn-gold">
+                    <i data-lucide="credit-card"></i> Buy Now
+                </a>
+            </div>
+
+            <div class="price-card">
+                <h3>Plus Lifetime</h3>
+                <div class="price-val">229 R$</div>
+                <p class="price-sub">Roblox Currency</p>
+                <div style="height: 20px;"></div> <a href="#" class="btn-buy btn-outline">
+                    <i data-lucide="shopping-cart"></i> Pay with Robux
+                </a>
+            </div>
+        </div>
     </div>
-    <script>lucide.createIcons();</script>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
