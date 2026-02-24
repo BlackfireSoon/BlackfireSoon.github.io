@@ -1,0 +1,90 @@
+/* style.css */
+:root {
+    --bg: #0a0b10;
+    --panel: #111218;
+    --accent: #4d79ff;
+    --stroke: #31323a;
+    --text: #ffffff;
+    --sine: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    --success: #22c55e;
+    --error: #ef4444;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    background: var(--bg); 
+    color: var(--text); 
+    font-family: 'Roboto', sans-serif; 
+}
+
+/* Unified Navigation Bar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10%;
+    background: #000;
+    border-bottom: 2px solid var(--stroke);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-area img { width: 28px; height: 28px; }
+
+.logo-area b {
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #a1a1a1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: var(--accent); 
+}
+
+/* Standard Button Style */
+.btn { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; 
+    background: var(--accent); 
+    color: white; 
+    text-decoration: none; 
+    padding: 15px 30px; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    transition: 0.3s; 
+    cursor: pointer;
+    border: none;
+}
+.btn:hover { 
+    transform: translateY(-2px); 
+    filter: brightness(1.2); 
+    box-shadow: 0 10px 20px rgba(77, 121, 255, 0.2);
+}
